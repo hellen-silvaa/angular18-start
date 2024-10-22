@@ -1,0 +1,47 @@
+<app-footer></app-footer>
+
+{{ name() }}  
+<img [src]="imgUrl"/>
+<!--interpolação usa para exibir o valor de uma variável no template e é feita com {{ }}. -->
+
+<button (click)="teste()">clique aqui</button>
+<!--evento de click é feito com (click) e o método que será chamado é passado entre aspas duplas. -->
+<!-- em vez de ser onclick é (click) todos metodos do html também funcionam no angular -->
+
+
+
+
+<!-- 
+*ngIf é uma diretiva estrutural que adiciona ou remove um elemento do DOM com base em uma expressão. Se a expressão for verdadeira, o elemento é adicionado. Se a expressão for falsa, o elemento é removido.
+@If  -->
+
+<!-- //diretivas estruturais são diretivas que alteram a estrutura do DOM adicionando ou removendo elementos. -->
+@if(value){
+    <h1>O valor é TRUE</h1>
+} @else if(cont ==2) {
+    <h1>O numero é 2</h1>
+} @else {
+    <h1>ELSEEEE</h1>
+}
+
+<!-- angular antigo usava *ngIf para fazer a mesma coisa que o @if -->
+<h2 *ngIf="value">valor é TRUE</h2>
+
+<!-- @for para fazer iteraçoes   -->
+<div>---------------------------------------------------
+  angular novo DIRETIVAS arroba for e arroba if
+</div>
+
+@for (item of lista; track item) {
+    <h1>{{ item }}</h1>
+} @empty {
+    <h1>Lista vazia</h1>
+}
+<div>---------------------------------------------------
+    angular velho DIRETIVAS *ngIf 
+</div>
+<!-- angular antigo -->
+ <div *ngFor=" let item of lista; let i = index">
+    <h1>{{ item }}</h1>
+ </div>
+ <h2 *ngIf="lista.length == 0">a lista é vazia</h2>
